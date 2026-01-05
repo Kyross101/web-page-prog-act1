@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home - My Animated Website</title>
+    <style>
+        /* ===== Body & Background ===== */
+        body {
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: 70px;
+            color: white;
+            overflow-y: auto;
+            background: linear-gradient(-45deg, #2c3e50, #3498db, #9b59b6, #f39c12);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+        
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== Floating Circles ===== */
+        .circle { position: absolute; border-radius: 50%; opacity: 0.3; animation: float 15s linear infinite; }
+        .circle1 { width: 120px; height: 120px; background: #f39c12; top: 10%; left: 15%; animation-duration: 12s; }
+        .circle2 { width: 200px; height: 200px; background: #9b59b6; top: 60%; left: 70%; animation-duration: 18s; }
+        .circle3 { width: 100px; height: 100px; background: #3498db; top: 80%; left: 30%; animation-duration: 20s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(50px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* ===== Header with Profile Section ===== */
+        header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 40px;
+            padding: 0px 20px 20px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .profile-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 150px;
+            gap: 30px;
+        }
+
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            animation: floatPic 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatPic {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        .profile-name {
+
+            animation: fadeIn 2s ease-in-out, slideUp 2s ease-in-out 0.5s forwards;
+            opacity: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .profile-name h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .profile-name p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            background-color: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            
+         color: #f39c12;
+         transform: scale(1.1);
+        
+        }
+
+        /* ===== Content ===== */
+        .content {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin-top: 50px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content h2 { font-size: 2em; margin-bottom: 20px; animation: slideUp 2s ease-in-out 0.5s forwards; opacity:0; }
+        .content p { font-size: 1.1em; animation: slideUp 2s ease-in-out 1s forwards; opacity:0; }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-block;
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: slideUp 2s ease-in-out 1.5s forwards;
+            opacity: 0;
+        }
+
+        .btn:hover { background-color: #e67e22; transform: translateY(-5px); }
+
+        /* ===== Footer ===== */
+        footer { background-color: rgba(0,0,0,0.4); color: white; text-align: center; padding: 15px; position: relative; z-index: 2; }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+        @keyframes slideUp { from{transform:translateY(30px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+
+    </style>
+</head>
+<body>
+
+    <!-- Floating Circles -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+
+    <!-- Header / Profile Section -->
+    <header>
+        <div class="profile-section">
+
+             <img src="pictures/venice.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="profile-name">
+            <h1>KyrossGeanePalen</h1>
+            <p>Welcome to my professional animated homepage!</p>
+          </div>
+       </div>
+       
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+ <!-- Main Content -->
+<div class="content-left">
+
+    <!-- Introduction -->
+    <div class="intro">
+        <p>I'm a college student passionate about web development, programming, and design. Explore my skills and projects below!</p>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="section skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-row">
+                <div class="skill-name">HTML5 & CSS3</div>
+                <div class="skill-desc">Building structured, styled, and responsive web pages.</div>
+            </div>
+            <div class="skill-row">
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-desc">Making websites interactive with dynamic behavior.</div>
+            </div>
+            <div class="skill-row">
+                <div class="skill-name">Python</div>
+                <div class="skill-desc">Programming, scripting, and backend logic.</div>
+            </div>
+            <div class="skill-row">
+                <div class="skill-name">Figma / UI Design</div>
+                <div class="skill-desc">Designing user interfaces and prototypes.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>Multi-page website built using HTML, CSS, and JavaScript. Features animated backgrounds, floating shapes, and interactive navigation.</p>
+            </div>
+            <div class="project-card">
+                <h3>Autobiography Project</h3>
+                <p>A detailed personal project showcasing writing, design, and presentation skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> kyrossgeanepalen@gmail.com</p>
+        <p><strong>Address:</strong> Pasig City</p>
+    </section>
+
+</div>
+
+<!-- Styles for Skills & Projects -->
+<style>
+/* Main content aligned left */
+.content-left {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: left; /* Left align */
+}
+
+/* Section spacing */
+.section {
+    margin-top: 50px;
+}
+
+/* Typography */
+.content-left h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-left p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Skills Grid - Two Columns */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* skill left, description right */
+    gap: 20px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.skill-row:hover {
+    transform: translateY(-5px);
+    background: rgba(243,156,18,0.2);
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-desc {
+    text-align: left;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: rgba(243,156,18,0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 50px;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive typography */
+@media screen and (max-width: 700px){
+    .skill-row {
+        grid-template-columns: 1fr; /* stack vertically sa mobile */
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 KyrossGeane Palen. All rights reserved.
+    </footer>
+</body>
+</html>
