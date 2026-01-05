@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact - KyrossGeane Palen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding-top: 70px; /* space for fixed nav */
+            color: white;
+            overflow-y: auto;
+
+            /* Animated Gradient Background */
+            background: linear-gradient(-45deg, #2c3e50, #3498db, #9b59b6, #f39c12);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Circles */
+        .circle { position: absolute; border-radius: 50%; opacity: 0.3; animation: float 15s linear infinite; }
+        .circle1 { width: 120px; height: 120px; background: #f39c12; top: 10%; left: 20%; animation-duration: 12s; }
+        .circle2 { width: 200px; height: 200px; background: #9b59b6; top: 60%; left: 70%; animation-duration: 18s; }
+        .circle3 { width: 100px; height: 100px; background: #3498db; top: 80%; left: 30%; animation-duration: 20s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(50px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            background-color: rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+            transform: scale(1.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+            position: relative;
+            z-index: 2;
+        }
+        header h1 { font-size: 3em; margin: 0; animation: fadeIn 2s ease-in-out; }
+        header p { font-size: 1.2em; margin-top: 10px; animation: slideUp 2s ease-in-out 0.5s forwards; opacity: 0; }
+
+        /* Main Content: Two Columns */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-left, .contact-right {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        /* Contact Info Card */
+        .contact-left {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .contact-left:hover { background: rgba(243,156,18,0.2); transform: translateY(-5px); }
+        .contact-left h2 { font-size: 2em; margin-bottom: 20px; }
+        .contact-left p { font-size: 1.1em; line-height: 1.6; }
+
+        /* Contact Form */
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .contact-right form:hover { background: rgba(243,156,18,0.2); transform: translateY(-5px); }
+
+        .contact-right h2 { font-size: 2em; margin-bottom: 20px; }
+        .contact-right input, .contact-right textarea {
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 1em;
+        }
+        .contact-right button {
+            padding: 12px;
+            background-color: #f39c12;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .contact-right button:hover { background-color: #e67e22; transform: translateY(-3px); }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        /* Responsive */
+        @media screen and (max-width: 700px){
+            .contact-container { flex-direction: column; align-items: center; }
+            .contact-left, .contact-right { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Circles -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>📬 Contact Me</h1>
+        <p>Get in touch for more information or collaborations</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="contact-container">
+        <!-- Left: Contact Info -->
+        <div class="contact-left">
+            <h2>Contact Info</h2>
+            <p><strong>Email:</strong> kyrossgeanepalen@gmail.com</p>
+            <p><strong>Phone:</strong> +63 9129631176</p>
+            <p><strong>Address:</strong> Pasig City, Manila</p>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-right">
+            <h2>Send a Message</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 KyrossGeane Palen. All rights reserved.
+    </footer>
+
+</body>
+</html>
